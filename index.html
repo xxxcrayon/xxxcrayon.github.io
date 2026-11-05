@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>esp32-fpv-receiver - Watch FPV Video on Your Windows PC</title>
+<meta name="description" content="esp32-fpv-receiver is a C5VRX build companion for Windows users. Get ESP32-C5 analog FPV wiring diagrams, source firmware, and a real-device USB console to view and test your FPV video feed quickly.">
+<meta name="keywords" content="esp32-fpv-receiver, C5VRX, ESP32-C5, analog FPV, FPV receiver, FPV wiring, USB console, drone video receiver, FPV firmware, Windows FPV app">
+<meta name="author" content="xxxcrayon">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/xxxcrayon/esp32-fpv-receiver">
+<meta property="og:type" content="website">
+<meta property="og:title" content="esp32-fpv-receiver - Watch FPV Video on Your Windows PC">
+<meta property="og:description" content="A C5VRX build companion: ESP32-C5 analog FPV wiring, source firmware, and a real-device USB console for your Windows computer.">
+<meta property="og:url" content="https://github.com/xxxcrayon/esp32-fpv-receiver">
+<meta property="og:site_name" content="esp32-fpv-receiver">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="esp32-fpv-receiver - Watch FPV Video on Your Windows PC">
+<meta name="twitter:description" content="Get the C5VRX build companion for ESP32-C5 analog FPV: wiring, firmware, and a real-device USB console.">
+<style>
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f4f7fb;
+    color: #24303f;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(23, 43, 77, 0.09);
+    padding: 32px 28px;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-size: 2.05rem;
+    line-height: 1.25;
+    margin: 0 0 14px;
+    letter-spacing: -0.4px;
+    color: #14213d;
+  }
+  h2 {
+    font-size: 1.4rem;
+    line-height: 1.35;
+    margin: 0 0 14px;
+    color: #14213d;
+    letter-spacing: -0.2px;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin: 22px 0 8px;
+    color: #1d3557;
+  }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px; padding-left: 22px; }
+  li { margin-bottom: 9px; }
+  a { color: #1554b3; }
+  .button {
+    display: inline-block;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 16px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.28);
+    margin: 8px 0 4px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .button:hover, .button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(37, 117, 252, 0.36);
+  }
+  .button-row { text-align: center; }
+  .button-note {
+    font-size: 0.92rem;
+    color: #5d6b7d;
+    margin-top: 10px;
+  }
+  .steps li { margin-bottom: 14px; }
+  .note-box {
+    background: #eef4ff;
+    border-left: 5px solid #2575fc;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 20px 0;
+    font-size: 0.97rem;
+  }
+  .tip-box {
+    background: #f1fbf5;
+    border-left: 5px solid #1faa59;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 20px 0;
+    font-size: 0.97rem;
+  }
+  .warn-box {
+    background: #fff6ec;
+    border-left: 5px solid #ec8b18;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 20px 0;
+    font-size: 0.97rem;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7a8d;
+    padding: 12px 8px 0;
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .card { padding: 24px 18px; border-radius: 14px; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.22rem; }
+    .button { display: block; width: 100%; padding: 15px 18px; font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="card">
+    <h1>🎥 esp32-fpv-receiver - Watch FPV Video on Your Windows PC</h1>
+    <p>This is your build companion for the C5VRX project. It brings together three things in one place: clear ESP32-C5 analog FPV wiring, the source firmware that makes the hardware work, and a real-device USB console you can open on your computer to see what your receiver is doing.</p>
+    <p>If you have ever wanted to plug a tiny FPV receiver board into your laptop and actually watch the picture come through, this is the page that gets you there. No programming experience is needed to follow along. You will be reading simple written steps and clicking a link.</p>
+    <div class="button-row">
+      <a class="button" href="https://github.com/xxxcrayon/esp32-fpv-receiver">Get esp32-fpv-receiver</a>
+      <p class="button-note">Visit this link to download the application.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📦 What You Get</h2>
+    <p>The project is organized around the C5VRX build, which means it is written for people who are putting a receiver together and want the pieces to match. Inside you will find:</p>
+    <ul>
+      <li><strong>Wiring guidance for the ESP32-C5.</strong> Plain descriptions of which wires go where, so you can connect your analog FPV receiver board without guessing.</li>
+      <li><strong>Source firmware.</strong> The code that runs on the board. You do not need to write any of it yourself; it is provided ready to use.</li>
+      <li><strong>A real-device USB console.</strong> A small companion application that talks to the actual hardware over a normal USB cable and shows live information from it on your screen.</li>
+      <li><strong>Analog FPV support.</strong> The receiver works with standard analog video feeds, the kind used by many small drones and FPV cameras.</li>
+    </ul>
+    <p>Everything is kept together in a single place so that when you sit down at your workbench, you are not hunting across five different websites for the pieces you need.</p>
+  </div>
+
+  <div class="card">
+    <h2>✅ Before You Begin</h2>
+    <p>You do not need to be technical, but you do need a few ordinary things ready before you start. Set these out first so you are not interrupted halfway through.</p>
+    <ul>
+      <li><strong>A Windows computer.</strong> Windows 10 or Windows 11 both work. A normal desktop or laptop is fine.</li>
+      <li><strong>An ESP32-C5 board.</strong> This is the small circuit board that the project is built around.</li>
+      <li><strong>An analog FPV receiver module.</strong> The part that picks up the video signal from your camera or drone.</li>
+      <li><strong>A USB data cable.</strong> A cable that carries data, not just power. Many charging-only cables will not work, so try a different one if the computer does not seem to notice the board.</li>
+      <li><strong>A few connecting wires.</strong> Standard jumper wires are what most people use.</li>
+      <li><strong>Your FPV camera or drone.</strong> Powered and working, so you have a real signal to test with.</li>
+    </ul>
+    <div class="note-box">
+      <strong>A quick word on cables.</strong> If nothing happens when you plug the board in, the cable is the most common reason. Try a cable you know has transferred files before, and try a different USB port on your computer as well.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>⬇️ Download and Setup</h2>
+    <p>The download lives on the project page. There is nothing to buy and no account to create.</p>
+    <ol class="steps">
+      <li><strong>Open the project page.</strong> Click this link: <a href="https://github.com/xxxcrayon/esp32-fpv-receiver">https://github.com/xxxcrayon/esp32-fpv-receiver</a></li>
+      <li><strong>Look for the download area.</strong> Once the page opens, find the section or button that offers the files for the application. On most project pages this is clearly labelled and sits near the top or along the right-hand side.</li>
+      <li><strong>Save the file to your computer.</strong> Choose a folder you will remember, such as your Downloads folder or a new folder on your desktop called "FPV".</li>
+      <li><strong>Visit this link to download the application.</strong> If you have not yet clicked through, use the button below to reach the same page.</li>
+    </ol>
+    <div class="button-row">
+      <a class="button" href="https://github.com/xxxcrayon/esp32-fpv-receiver">Download esp32-fpv-receiver</a>
+      <p class="button-note">Visit this link to download the application.</p>
+    </div>
+    <p>Keep the downloaded item in one place. Mixing it into a busy Downloads folder is the single most common reason people cannot find it again ten minutes later.</p>
+  </div>
+
+  <div class="card">
+    <h2>🔌 Connecting Your Receiver</h2>
+    <p>This is the part many people worry about, and it is easier than it sounds. You are joining a few wires between two small boards and then plugging one cable into your computer.</p>
+    <h3>Step by step</h3>
+    <ol class="steps">
+      <li><strong>Power everything off.</strong> Unplug the USB cable and disconnect any battery before touching wires. This protects both you and the boards.</li>
+      <li><strong>Follow the wiring notes in the project.</strong> The project includes wiring guidance written specifically for the ESP32-C5. Match the labelled connections exactly as described there rather than guessing from memory.</li>
+      <li><strong>Check each connection twice.</strong> Give a gentle tug on every wire. A wire that slides out of its socket later will waste far more time than checking now.</li>
+      <li><strong>Connect the USB cable to your computer.</strong> Only after the wiring is confirmed, plug the board into a USB port.</li>
+      <li><strong>Open the USB console.</strong> The console is the part of the project that displays live information from the real device on your screen.</li>
+      <li><strong>Power up your camera.</strong> With the camera running, you should start to see activity reported in the console.</li>
+    </ol>
+    <div class="warn-box">
+      <strong>Please take this seriously.</strong> Never connect or move wires while the board is powered from USB or a battery. Small mistakes with live power can permanently damage a board, and the boards are not always cheap to replace.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🖥️ Using the USB Console</h2>
+    <p>The console is the friendly face of the project. It is a window on your computer that shows you what the real device is reporting, which turns a silent little board into something you can actually understand.</p>
+    <p>Here is what people typically use it for:</p>
+    <ul>
+      <li><strong>Checking the connection.</strong> The console tells you quickly whether your computer can see the board or not.</li>
+      <li><strong>Watching live activity.</strong> Instead of staring at a board and hoping, you watch the messages arrive as things happen.</li>
+      <li><strong>Spotting wiring mistakes early.</strong> If a signal is missing, the console usually shows it before you start taking hardware apart.</li>
+      <li><strong>Confirming a working FPV feed.</strong> When the camera is on and everything is correct, you will see the evidence in the console.</li>
+    </ul>
+    <div class="tip-box">
+      <strong>Useful habit.</strong> Open the console first, then power the board. Watching the messages appear from the very start tells you far more than opening it after everything is already running.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🛠️ If Something Does Not Work</h2>
+    <p>Almost everyone hits a small snag the first time. Work through these in order and you will usually find the cause quickly.</p>
+    <ul>
+      <li><strong>Nothing appears in the console.</strong> Replace the USB cable with one you know carries data, and try a different USB port. This solves the majority of cases.</li>
+      <li><strong>The board is recognised but the picture is missing.</strong> Recheck your wiring against the project's ESP32-C5 guidance, paying particular attention to the video and ground connections.</li>
+      <li><strong>The picture is unstable.</strong> Analog video is sensitive to interference. Move the receiver away from power supplies, laptops, and anything with a motor or a strong radio signal nearby.</li>
+      <li><strong>The console opens but stays empty.</strong> Close it, unplug the board, plug it back in, and open the console again. Starting the console first, then the board, often fixes this.</li>
+      <li><strong>Your camera has no power.</strong> An unpowered camera produces no signal at all, and it looks exactly like a broken receiver. Confirm the camera first.</li>
+      <li><strong>Windows does not make the usual sound.</strong> That sound is your computer noticing the board. If you do not hear it, the problem is the cable or the port, not the software.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💡 Tips for a Smooth Build</h2>
+    <ul>
+      <li>Keep a simple notebook or a phone note of what you changed each time. When something starts working, you will want to know why.</li>
+      <li>Change one thing at a time. Changing wiring, cables, and software all at once makes it impossible to know which fix helped.</li>
+      <li>Test on a clear, uncluttered desk. Stray metal objects and loose wires create interference that is hard to diagnose later.</li>
+      <li>Give yourself time. The first build is always slower than the second one, and that is completely normal.</li>
+      <li>Do not force connectors. If a plug needs real pressure to go in, something is usually turned the wrong way.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📚 Staying Up to Date</h2>
+    <p>The project page is the place where everything lives, and it is where updates appear first. If you have bookmarked one thing from this page, make it that link. Return to it before you start a new build or when you want to check whether the wiring notes have changed.</p>
+    <p>Because the firmware and the console are shared together, keeping them from the same place keeps them matching. Mixing an old copy of one with a new copy of the other is a reliable way to create confusing problems for yourself.</p>
+    <div class="button-row">
+      <a class="button" href="https://github.com/xxxcrayon/esp32-fpv-receiver">Go to the project page</a>
+      <p class="button-note">Visit this link to download the application.</p>
+    </div>
+  </div>
+
+  <footer>
+    esp32-fpv-receiver — C5VRX build companion for ESP32-C5 analog FPV.
+  </footer>
+
+</div>
+</body>
+</html>
